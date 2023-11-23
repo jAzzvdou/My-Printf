@@ -6,7 +6,7 @@
 #    By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 15:12:38 by jazevedo          #+#    #+#              #
-#    Updated: 2023/11/22 17:53:30 by jazevedo         ###   ########.fr        #
+#    Updated: 2023/11/23 14:15:53 by jazevedo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,8 +36,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 		ar rcs $(NAME) $(OBJS)
 
-bonus: $(OBJS)
-		ar rcs $(NAME) $(OBJS)
+bonus: $(NAME)
 
 .c.o:
 		$(CC) $(CFLAGS) -c $<

@@ -6,7 +6,7 @@
 /*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 12:30:39 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/22 19:18:09 by jazevedo         ###   ########.fr       */
+/*   Updated: 2023/11/23 14:05:23 by jazevedo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define FT_PRINTF_H
 
 # include <unistd.h>
-# include <stdlib.h>
 # include <stdarg.h>
 
 # define NUMBERS "0123456789"
