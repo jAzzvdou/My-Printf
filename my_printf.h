@@ -1,5 +1,5 @@
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef MY_PRINTF_H
+# define MY_PRINTF_H
 
 # include <unistd.h>
 # include <stdarg.h>
@@ -26,7 +26,7 @@ typedef struct s_f
 	int	cprint;
 }	t_f;
 
-//FT_PRINTF
+//MY_PRINTF
 int		my_printf(const char *format, ...);
 
 //FLAGS
