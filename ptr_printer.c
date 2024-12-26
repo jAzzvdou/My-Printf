@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ptr_printer.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 13:14:05 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/23 10:15:00 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "my_printf.h"
 
 static int	ptr_flags(unsigned long int n, t_f *f, int digts)
 {
@@ -36,20 +24,20 @@ void	ptr_printer(va_list args, t_f *f)
 	n = va_arg(args, unsigned long int);
 	if (!n)
 	{
-		ft_putstr("(nil)");
+		my_putstr("(nil)");
 		f->cprint += 5;
 		return ;
 	}
 	digts = ptr_flags(n, f, houses2(n, 16, f));
 	if (!f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
-	ft_putstr("0x");
+			my_putchar(' ');
+	my_putstr("0x");
 	while (f->precision-- > 0)
-		ft_putchar('0');
+		my_putchar('0');
 	if (digts > 2)
-		ft_putnbase2(n, XLOW);
+		my_putnbase2(n, XLOW);
 	if (f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
+			my_putchar(' ');
 }

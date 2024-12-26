@@ -12,7 +12,7 @@
 
 NAME	=	libftprintf.a
 
-SRCS	=	ft_printf.c       \
+SRCS	=	my_printf.c       \
 		flags.c           \
 		percent_printer.c \
 		c_printer.c       \

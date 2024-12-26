@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 12:35:38 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/23 09:46:43 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "my_printf.h"
 
 static void	set_flags(t_f *f)
 {
@@ -44,7 +32,7 @@ static void	types(const char *format, va_list args, t_f *f)
 		percent_printer(f);
 	else
 	{
-		ft_putchar('%');
+		my_putchar('%');
 		f->i--;
 		f->cprint++;
 	}
@@ -52,7 +40,7 @@ static void	types(const char *format, va_list args, t_f *f)
 	set_flags(f);
 }
 
-int	ft_printf(const char *format, ...)
+int	my_printf(const char *format, ...)
 {
 	va_list	args;
 	t_f		f;
@@ -70,7 +58,7 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar(format[f.i]);
+			my_putchar(format[f.i]);
 			f.cprint++;
 			f.i++;
 		}

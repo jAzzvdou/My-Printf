@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   help_functions.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 16:49:29 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/21 17:05:24 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "my_printf.h"
 
-#include "ft_printf.h"
-
-void	ft_putchar(char c)
+void	my_putchar(char c)
 {
 	write(1, &c, 1);
 }
 
-void	ft_putstr(char *s)
+void	my_putstr(char *s)
 {
 	int	i;
 
@@ -27,7 +15,7 @@ void	ft_putstr(char *s)
 	write(1, s, i);
 }
 
-int	ft_strlen(char *s)
+int	my_strlen(char *s)
 {
 	int	i;
 
@@ -37,14 +25,14 @@ int	ft_strlen(char *s)
 	return (i);
 }
 
-int	ft_isdigit(int c)
+int	my_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	my_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 

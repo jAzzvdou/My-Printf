@@ -1,40 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   iduxx_printer.c                                    :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 13:58:03 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/23 10:06:01 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "my_printf.h"
 
 static void	printeri(long int n, t_f *f, int size, char *base)
 {
 	if (!f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
-	if (f->f_h && ft_strncmp(base, XHIGH, 16) == 0)
-		ft_putstr("0X");
-	else if (f->f_h && ft_strncmp(base, XLOW, 16) == 0)
-		ft_putstr("0x");
-	if (f->f_p && !f->nb && ft_strncmp(base, NUMBERS, 10) == 0)
+			my_putchar(' ');
+	if (f->f_h && my_strncmp(base, XHIGH, 16) == 0)
+		my_putstr("0X");
+	else if (f->f_h && my_strncmp(base, XLOW, 16) == 0)
+		my_putstr("0x");
+	if (f->f_p && !f->nb && my_strncmp(base, NUMBERS, 10) == 0)
 	{
-		ft_putchar('+');
+		my_putchar('+');
 		f->cprint += 1;
 	}
 	if (f->nb == 1)
-		ft_putchar('-');
+		my_putchar('-');
 	while (f->zero-- > 0)
-		ft_putchar('0');
+		my_putchar('0');
 	if (size)
-		ft_putnbase(n, base);
+		my_putnbase(n, base);
 	if (f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
+			my_putchar(' ');
 }
 
 static void	set_print(long int n, t_f *f, int size, char *base)
@@ -99,7 +87,7 @@ void	iduxx_printer(char c, va_list args, t_f *f)
 		if (!f->precision && f->dot)
 			f->f_z = 0;
 		if (f->f_s && !f->nb && n >= 0 && !f->f_p)
-			ft_putchar(' ');
+			my_putchar(' ');
 		set_print(n, f, houses(n, 10, f), NUMBERS);
 	}
 	else

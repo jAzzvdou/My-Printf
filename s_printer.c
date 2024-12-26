@@ -1,16 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   s_printer.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 15:07:53 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/22 17:11:10 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "my_printf.h"
 
 static int	s_flags(int size, t_f *f)
 {
@@ -34,16 +22,16 @@ void	s_printer(va_list args, t_f *f)
 	s = va_arg(args, char *);
 	if (s == NULL)
 		s = "(null)";
-	size = s_flags(ft_strlen(s), f);
+	size = s_flags(my_strlen(s), f);
 	if (!f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
+			my_putchar(' ');
 	if (f->f_z)
 		while (f->zero-- > 0)
-			ft_putchar('0');
+			my_putchar('0');
 	while (size--)
-		ft_putchar(*s++);
+		my_putchar(*s++);
 	if (f->f_m)
 		while (f->space-- > 0)
-			ft_putchar(' ');
+			my_putchar(' ');
 }

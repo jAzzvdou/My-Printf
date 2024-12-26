@@ -1,23 +1,11 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   flags.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: jazevedo <jazevedo@student.42.rio>         +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/22 14:03:52 by jazevedo          #+#    #+#             */
-/*   Updated: 2023/11/22 19:26:29 by jazevedo         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "ft_printf.h"
+#include "my_printf.h"
 
 static int	sudo_itoa(const char *format, t_f *f)
 {
 	int	n;
 
 	n = 0;
-	while (ft_isdigit(format[f->i]))
+	while (my_isdigit(format[f->i]))
 	{
 		n = n * 10 + (format[f->i] - '0');
 		f->i++;
@@ -38,7 +26,7 @@ static void	precision_count(const char *format, va_list args, t_f *f)
 	}
 	else
 	{
-		if (ft_isdigit(format[f->i]))
+		if (my_isdigit(format[f->i]))
 			f->f_z = 0;
 		f->precision = sudo_itoa(format, f);
 	}
